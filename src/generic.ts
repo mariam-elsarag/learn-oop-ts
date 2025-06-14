@@ -70,4 +70,3 @@ product1.add({
 });
 
 const product2 = new Product1<Laptop>();
-product2.add();

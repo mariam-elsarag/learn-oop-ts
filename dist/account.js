@@ -1,7 +1,7 @@
 "use strict";
 // creation of class pascall case
 class Account {
-    // paramater properties
+    // parameter properties
     constructor(owner, _balance) {
         this.owner = owner;
         this._balance = _balance;

@@ -8,4 +8,4 @@ interface IPerson {
 }
 
 type PersonKey = keyof IPerson;
-const personKey=
+const personKey: PersonKey = "age";
