@@ -8,6 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 function Logger(classPrototype, methodName, descriptor) {
     console.log(classPrototype, "class prototype \n", methodName, "Method name \n", descriptor);
+    // this to add new code to method without delete previous implemntation
     const original = descriptor.value;
     descriptor.value = function (speed) {
         original.call(this, speed);
