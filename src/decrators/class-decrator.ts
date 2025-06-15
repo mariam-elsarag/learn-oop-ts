@@ -22,13 +22,21 @@
 // with paramater
 function Controller(endpoint: string) {
   return (constructor: Function) => {
+    console.log("basic controller ");
     constructor.prototype.endpoint = endpoint;
     constructor.prototype.login = () => {
       console.log("You are logged in");
     };
   };
 }
+function Authorization(role: string) {
+  return (constructor: Function) => {
+    console.log("authorization controller ");
+    constructor.prototype.role = role;
+  };
+}
 
+@Authorization("admin")
 @Controller("api/auth")
 class Auth3 {}
 const a1 = new Auth3();
