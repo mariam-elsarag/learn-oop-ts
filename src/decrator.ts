@@ -9,16 +9,27 @@
  * It work at least one time
  *
  */
-function Controller(constructor: Function) {
-  // add property
-  constructor.prototype.endpoint = "/api/auth";
-  // add method
-  constructor.prototype.login = () => {
-    console.log("You are logged in");
+// regurla one
+// function Controller(constructor: Function) {
+//   // add property
+//   constructor.prototype.endpoint = "/api/auth";
+//   // add method
+//   constructor.prototype.login = () => {
+//     console.log("You are logged in");
+//   };
+// }
+
+// with paramater
+function Controller(endpoint: string) {
+  return (constructor: Function) => {
+    constructor.prototype.endpoint = endpoint;
+    constructor.prototype.login = () => {
+      console.log("You are logged in");
+    };
   };
 }
 
-@Controller
+@Controller("api/auth")
 class Auth3 {}
 const a1 = new Auth3();
 //@ts-ignore
